@@ -34,7 +34,7 @@
 	define('BMT_CART_CURRENCY_SYMBOL', get_option('cart_currency_symbol'));
 	define('BMT_CART_SITE_URL', site_url());
 	define('BMT_WP_CART_URL', 'https://secure.bmtmicro.com/cart?CID=2/WP');
-	define('BMT_URL', 'https://secure.bmtmicro.com/cart?');
+	define('BMT_URL', 'https://secure.bmtmicro.com/cart');
 
 	if (!defined('BMT_CART_MANAGEMENT_PERMISSION')) {//This will allow the user to define custom capability for this constant in wp-config file
 		define('BMT_CART_MANAGEMENT_PERMISSION', 'manage_options');

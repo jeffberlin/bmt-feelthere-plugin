@@ -123,13 +123,13 @@
 			<div class="inside">
 				<table class="form-table">
 
-					<tr valign="top">
+				<tr valign="top">
 					<th scope="row">'.(__("BMT Vendor ID", "wordpress-simple-paypal-shopping-cart")).'</th>
-						<td><input type="text" name="vendorCid" value="'.esc_attr($vendor_cid).'" size="100" />
+					<td><input type="text" name="vendorCid" value="'.esc_attr($vendor_cid).'" size="100" />
 						<br />'.(__("Enter your BMT Vendor ID (CID). This will allow the checkout to show your custom cart through BMT Micro.", "wordpress-simple-paypal-shopping-cart")).'
 						<br />
-						</td>
-					</tr>
+					</td>
+				</tr>
 
 					<tr valign="top">
 					<th scope="row">'.(__("Buy Now Button text or Image", "wordpress-simple-paypal-shopping-cart")).'</th>
