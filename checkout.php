@@ -18,9 +18,7 @@ function bmt_checkout_handler($atts) {
       $replacement .= '<input type="image" src="' . $atts['button_image'] . '" class="bmt_checkout_button" alt="' . (__("Checkout", "wordpress-simple-paypal-shopping-cart")) . '"/>';
   } else if (isset($atts['button_text']) && !empty($atts['button_text'])) {
       //Use the custom button text specified in the shortcode
-      // $replacement .= '<input type="submit" class="bmt_checkout_submit" name="bmt_checkout_submit" value="' . apply_filters('bmt_checkout_submit_button_value', $atts['button_text']) . '" />';
-
-      $replacement .= '<input type="button" id="buybutton" onclick="bmt_showcart(' . $vendor_cid . ', true);" value="' . apply_filters('bmt_checkout_submit_button_value', $atts['button_text']) . '">';
+      $replacement .= '<input type="button" id="buybutton" onclick="bmt_showcart(\'' . $vendor_cid .'\', true);" value="' . apply_filters('bmt_checkout_submit_button_value', $atts['button_text']) . '">';
   } else {
       //Use the button text or image value from the settings
       if (preg_match("/http:/", $checkout) || preg_match("/https:/", $checkout)) {
@@ -28,9 +26,7 @@ function bmt_checkout_handler($atts) {
           $replacement .= '<input type="image" src="' . $checkout . '" class="bmt_checkout_button" alt="' . (__("Checkout", "wordpress-simple-paypal-shopping-cart")) . '"/>';
       } else {
           //Use plain text add to cart button
-          // $replacement .= '<input type="submit" class="bmt_checkout_submit" id="bmt_checkout_submit" name="bmt_checkout_submit" value="' . apply_filters('bmt_checkout_submit_button_value', $checkout) . '" />';
-
-          $replacement .= '<input type="button" id="buybutton" onclick="bmt_showcart(' . $vendor_cid . ', true);" value="' . apply_filters('bmt_checkout_submit_button_value', $checkout) . '" />';
+          $replacement .= '<input type="button" id="buybutton" onclick="bmt_showcart(\'' . $vendor_cid .'\', true);" value="' . apply_filters('bmt_checkout_submit_button_value', $checkout) . '" />';
       }
   }
 

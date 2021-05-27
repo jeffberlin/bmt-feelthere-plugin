@@ -53,9 +53,6 @@
 	include_once('add_cart.php');
 	include_once('buy_now.php');
 	include_once('checkout.php');
-	// include_once('wp-config.php');
-
-	// ADD NEW CODE HERE BELOW
 
 	function bmt_admin_side_styles() {
 		wp_enqueue_style('bmt-admin-style', BMT_CART_URL . '/css/bmt-admin-styles.css', array(), BMT_CART_VERSION);
@@ -82,9 +79,9 @@
 	add_action('wp_head', 'change_this_name_of_your_function');
 	function change_this_name_of_your_function(){
 		echo '<script src="https://secure.bmtmicro.com/bmt_cart.js"></script>';
+		// echo '<script src="https://secure.bmtmicro.com/bmt_cart_debug.js"></script>';
 		echo '<link rel="stylesheet" href="https://secure.bmtmicro.com/bmt_cart.css" />';
 	}
 
 	add_action('wp_enqueue_scripts', 'bmt_front_side_enqueue_scripts');
-	//add_action('admin_enqueue_scripts', 'bmt_admin_side_enqueue_scripts');
 	add_action('admin_print_styles', 'bmt_admin_side_styles');

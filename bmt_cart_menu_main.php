@@ -75,11 +75,6 @@
 	    $vendor_cid = get_option('vendorCid');
 	    if (empty($vendor_cid)) $vendor_cid = __("Enter Vendor ID #");
 
-	    // $bmt_disable_nonce_add_cart = '';
-	    // if (get_option('bmt_disable_nonce_add_cart')){
-	    //     $bmt_disable_nonce_add_cart = 'checked="checked"';
-	    // }
-
 	    $title = get_option('bmt_cart_title');
 
  			echo '<div class="wrap"><div id="poststuff"><div id="post-body">';

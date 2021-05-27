@@ -2,8 +2,6 @@
 
 defined( 'ABSPATH' ) or die( 'Checkout BMTMicro.com for more info!' );
 
-$slash .= "X2";
-
 function print_bmt_add_cart_button_for_product($product_id, $atts = array()) {
   $addcart = get_option('addToCartButtonName');
   if(!$addcart || ($addcart == '')) {
@@ -22,9 +20,7 @@ function print_bmt_add_cart_button_for_product($product_id, $atts = array()) {
         $replacement .= '<input type="image" src="' . $atts['button_image'] . '" class="bmt_add_cart_button" alt="' . (__("Add to Cart", "wordpress-simple-paypal-shopping-cart")) . '"/>';
     } else if (isset($atts['button_text']) && !empty($atts['button_text'])) {
         //Use the custom button text specified in the shortcode
-        // $replacement .= '<input type="submit" class="bmt_add_cart_submit" id="bmt_add_cart_submit" name="bmt_add_cart_submit" value="' . apply_filters('bmt_add_cart_submit_button_value', $atts['button_text'], $product_id) . '" />';
-
-        $replacement .= '<input type="button" id="buybutton" class="bmt_add_cart_submit" onclick="bmt_addtocart(' . $product_id . ', "' . $vendor_cid . 'X2", false);" name="bmt_add_cart_submit" value="' . apply_filters('bmt_add_cart_submit_button_value', $atts['button_text'], $product_id) . '" />';
+        $replacement .= '<input type="button" id="buybutton" class="bmt_add_cart_submit" onclick="bmt_addtocart(' . $product_id . ', \'' . $vendor_cid .'\', false);" name="bmt_add_cart_submit" value="' . apply_filters('bmt_add_cart_submit_button_value', $atts['button_text'], $product_id) . '" />';
     } else {
         //Use the button text or image value from the settings
         if (preg_match("/http:/", $addcart) || preg_match("/https:/", $addcart)) {
@@ -32,9 +28,7 @@ function print_bmt_add_cart_button_for_product($product_id, $atts = array()) {
             $replacement .= '<input type="image" src="' . $addcart . '" class="bmt_add_cart_button" alt="' . (__("Add to Cart", "wordpress-simple-paypal-shopping-cart")) . '"/>';
         } else {
             //Use plain text add to cart button
-            // $replacement .= '<input type="submit" class="bmt_add_cart_submit" id="bmt_add_cart_submit" name="bmt_add_cart_submit" value="' . apply_filters('bmt_add_cart_submit_button_value', $addcart, $product_id) . '" />';
-
-            $replacement .= '<input type="button" id="buybutton" class="bmt_add_cart_submit" name="bmt_add_cart_submit" onclick="bmt_addtocart(' . $product_id . ', "' . $vendor_cid . 'X2", false);" value="' . apply_filters('bmt_add_cart_submit_button_value', $addcart, $product_id) . '" />';
+            $replacement .= '<input type="button" id="buybutton" class="bmt_add_cart_submit" name="bmt_add_cart_submit" onclick="bmt_addtocart(' . $product_id . ', \'' . $vendor_cid .'\', false);" value="' . apply_filters('bmt_add_cart_submit_button_value', $addcart, $product_id) . '" />';
         }
     }
 
