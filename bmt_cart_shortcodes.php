@@ -32,7 +32,5 @@
 	}
 
 	function bmt_cart_show_handler($atts) {
-		$cart_image .= '<iframe src="' . BMT_WP_CART_URL . '" name="cart_frame" width="70" height="70" id="cart_show">';
-		$cart_image .= '</iframe>';
-		return $cart_image;
+		return '<iframe id="bmt_cart_iconframe" name="bmt_cart_iconframe" width="70" height="70"></iframe>';
 	}

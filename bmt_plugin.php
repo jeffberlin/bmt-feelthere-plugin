@@ -33,7 +33,7 @@
 	define('BMT_CART_URL', plugins_url('', __FILE__));
 	define('BMT_CART_CURRENCY_SYMBOL', get_option('cart_currency_symbol'));
 	define('BMT_CART_SITE_URL', site_url());
-	define('BMT_WP_CART_URL', 'https://secure.bmtmicro.com/cart?CID=2/WP');
+	// define('BMT_WP_CART_URL', 'https://secure.bmtmicro.com/cart?CID=2/WP');
 	define('BMT_URL', 'https://secure.bmtmicro.com/cart');
 
 	if (!defined('BMT_CART_MANAGEMENT_PERMISSION')) {//This will allow the user to define custom capability for this constant in wp-config file
@@ -78,8 +78,8 @@
 
 	add_action('wp_head', 'change_this_name_of_your_function');
 	function change_this_name_of_your_function(){
-		echo '<script src="https://secure.bmtmicro.com/bmt_cart.js"></script>';
-		// echo '<script src="https://secure.bmtmicro.com/bmt_cart_debug.js"></script>';
+		// echo '<script src="https://secure.bmtmicro.com/bmt_cart.js"></script>';
+		echo '<script src="https://secure.bmtmicro.com/bmt_cart_debug.js"></script>';
 		echo '<link rel="stylesheet" href="https://secure.bmtmicro.com/bmt_cart.css" />';
 	}
 
