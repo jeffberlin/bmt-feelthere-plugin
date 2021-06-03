@@ -76,10 +76,10 @@
 		wp_enqueue_script('my-script', plugins_url('js/submit.js', __FILE__), array('jquery'), '1.0', true);
 	}
 
-	add_action('wp_head', 'change_this_name_of_your_function');
-	function change_this_name_of_your_function(){
-		// echo '<script src="https://secure.bmtmicro.com/bmt_cart.js"></script>';
-		echo '<script src="https://secure.bmtmicro.com/bmt_cart_debug.js"></script>';
+	add_action('wp_head', 'insert_header_elements');
+	function insert_header_elements(){
+		echo '<script src="https://secure.bmtmicro.com/bmt_cart_wp.js"></script>';
+		// echo '<script src="https://secure.bmtmicro.com/bmt_cart_debug.js"></script>';
 		echo '<link rel="stylesheet" href="https://secure.bmtmicro.com/bmt_cart.css" />';
 	}
 
