@@ -65,7 +65,7 @@
 	register_activation_hook(__FILE__, 'bmt_plugin_install');
 
 	if (!is_admin()) {
-	    add_filter('widget_text', 'do_shortcode');
+    add_filter('widget_text', 'do_shortcode');
 	}
 
 	add_filter('show_admin_bar', '__return_true');
